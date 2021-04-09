@@ -1,6 +1,8 @@
 :root {
   --main-gray: #2d2d2d;
-  --light-gray: #6b6b6b;
+  --light-gray: #979696;
+  --main-orange: rgb(255, 81, 0);
+  --secondary-orange: rgb(255, 131, 74);
 }
 
 body {
@@ -10,4 +12,45 @@ body {
 nav {
   background-image: linear-gradient(black, #3f3f3f);
   width: 100%;
+}
+
+.nav-link {
+  background-color: var(--main-orange);
+  border-radius: .2rem;
+}
+
+.logo {
+  width: 16.25rem;
+}
+
+/* Navigation Styles */
+
+nav a.nav-link {
+  font-weight: 500;
+  color: var(--main-orange)
+}
+
+.navbar-nav > li > a {
+  margin: 0rem 0.75rem;
+  border-top: 0.1875rem solid transparent;
+}
+
+.navbar-brand {
+  max-width: 17.25rem;
+}
+
+.searchbar {
+  background-color: var(--light-gray);
+}
+
+.orange-button {
+  color: black;
+  background-color: var(--main-orange);
+  border-color: var(--main-orange);
+}
+
+.orange-button:hover {
+  color: black;
+  background-color: var(--secondary-orange);
+  border-color: var(--secondary-orange);
 }
