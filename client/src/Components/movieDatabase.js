@@ -53,6 +53,8 @@ const getMovies = () => {
 
       const { items } = await response.json();
 
+      /// Still need to alter the layout of the cards to include all important data.
+
       const movieData = items.map((movie) => ({
         movieId: movie.id,
         title: movie.title,
