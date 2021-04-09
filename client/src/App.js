@@ -7,6 +7,9 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
+console.log(process.env.REACT_APP_TMD_API_KEY)
+
+
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('id_token');
