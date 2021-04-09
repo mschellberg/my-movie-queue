@@ -8,7 +8,7 @@ function Nav(props) {
         <div className="container">
             <a className="navbar-brand" href="#"><img className="logo" src={logo} alt="Kesiah's Logo"/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon background-orange"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
@@ -18,12 +18,8 @@ function Nav(props) {
                     </li>
                     ))}
                 </ul>
-                <div class="input-group">
-                <input type="search" class="form-control rounded searchbar" placeholder="Search for movies..." aria-label="Search"
-                    aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary orange-button">Search</button>
-                </div>
             </div>
+            
         </div>
     </nav>
     )

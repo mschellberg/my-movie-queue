@@ -1,7 +1,8 @@
+
 :root {
   --main-gray: #2d2d2d;
   --light-gray: #979696;
-  --main-orange: rgb(255, 81, 0);
+  --main-orange: #ff8762;
   --secondary-orange: rgb(255, 131, 74);
 }
 
@@ -9,8 +10,41 @@ body {
   background-color: var(--light-gray);
 }
 
+/* Utility Classes */
+
+.add-margin {
+  margin: 1.5rem;
+}
+.secondary-color {
+  color: var(--main-orange);
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.background-orange {
+  background-color: var(--main-orange);
+  border-radius: .25rem;
+}
+
+.orange-button {
+  color: white;
+  font-weight: bold;
+  background-color: var(--main-orange);
+  border-color: var(--main-orange);
+}
+
+.orange-button:hover {
+  color: black;
+  background-color: var(--secondary-orange);
+  border-color: var(--secondary-orange);
+}
+
+/* Navigation Styles */
+
 nav {
-  background-image: linear-gradient(black, #3f3f3f);
+  background: black;
   width: 100%;
 }
 
@@ -22,8 +56,6 @@ nav {
 .logo {
   width: 16.25rem;
 }
-
-/* Navigation Styles */
 
 nav a.nav-link {
   font-weight: 500;
@@ -39,18 +71,26 @@ nav a.nav-link {
   max-width: 17.25rem;
 }
 
+/*Home Styles*/
+
 .searchbar {
   background-color: var(--light-gray);
 }
 
-.orange-button {
-  color: black;
-  background-color: var(--main-orange);
-  border-color: var(--main-orange);
+.main-container {
+  background-image: url('./images/cinema.jpg');
+  height: 80vh;
+  padding: 2rem;
+  background-size: cover;
 }
 
-.orange-button:hover {
-  color: black;
-  background-color: var(--secondary-orange);
-  border-color: var(--secondary-orange);
+.results-container {
+  background-color: var(--light-gray);
+  border-radius: .25rem;
+  padding: .5rem;
+}
+
+.title-text {
+  color:white;
+  text-align: center;
 }

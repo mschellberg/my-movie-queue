@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Nav from './components/Nav'
+import Home from './pages/Home'
 
 import React from 'react';
 
@@ -28,6 +29,9 @@ function App() {
       <header className="App-header">
         <Nav />
       </header>
+    </div>
+    <div>
+      <Home />
     </div>
     </ApolloProvider>
   );
