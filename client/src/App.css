@@ -3,11 +3,11 @@
   --main-gray: #2d2d2d;
   --light-gray: #979696;
   --main-orange: #ff8762;
-  --secondary-orange: rgb(255, 131, 74);
+  --secondary-orange: #ffa276;
 }
 
 body {
-  background-color: var(--light-gray);
+  background-color: black;
 }
 
 /* Utility Classes */
@@ -15,6 +15,19 @@ body {
 .add-margin {
   margin: 1.5rem;
 }
+
+.add-top-margin {
+  margin-top: 1.5rem;
+}
+
+.add-padding {
+  padding: .5rem;
+}
+
+.center {
+  text-align: center;
+}
+
 .secondary-color {
   color: var(--main-orange);
 }
@@ -33,12 +46,23 @@ body {
   font-weight: bold;
   background-color: var(--main-orange);
   border-color: var(--main-orange);
+  border-radius: .25rem;
 }
 
 .orange-button:hover {
   color: black;
   background-color: var(--secondary-orange);
   border-color: var(--secondary-orange);
+  text-decoration: none;
+}
+
+.link-text {
+  color: white;
+}
+
+.link-text:hover {
+  color: var(--main-orange);
+  text-decoration: none;
 }
 
 /* Navigation Styles */
@@ -93,4 +117,14 @@ nav a.nav-link {
 .title-text {
   color:white;
   text-align: center;
+}
+
+.main-link:hover {
+  border-top: .3rem solid var(--main-orange);
+  text-shadow: .2rem .2rem .5rem var(--light-gray);
+}
+
+.main-link:focus {
+  border-top: .3rem solid var(--main-orange);
+  color:var(--main-orange);
 }
