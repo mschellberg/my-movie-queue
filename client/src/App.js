@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-
 import React from 'react';
 
 // add these two library import statements
@@ -17,7 +14,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 function App() {
