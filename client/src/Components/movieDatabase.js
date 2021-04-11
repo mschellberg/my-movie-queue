@@ -97,6 +97,8 @@ const getMovies = () => {
     }
   };
   */
+
+  // For image path, we can change the w500 to one of 3 sizes. 
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
@@ -134,6 +136,7 @@ const getMovies = () => {
           {searchedMovies.map((movie) => {
             return (
               <Card key={movie.movieId} border='dark'>
+                
                   <Card.Img src= {(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`)} alt={`The cover for ${movie.title}`)} variant='top' />
                 ) : null}
                 <Card.Body>
