@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Queue from './pages/Queue'
-import Favorites from './components/Favorites';
+import Favorites from './pages/Favorites';
 
 import React from 'react';
 

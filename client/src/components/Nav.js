@@ -12,14 +12,14 @@ function Nav(props) {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
+                    <li>
                         <Link to="/" className="link-text bold-text add-padding main-link">Home</Link>
                     </li>
                     {/* ****TODO: add conditional rendering to only show these if logged in */}
                     <li>
                         <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
                     </li>
-                    <li className="nav-item">
+                    <li>
                         <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
                     </li>
                 </ul>

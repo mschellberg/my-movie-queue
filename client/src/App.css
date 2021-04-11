@@ -30,7 +30,6 @@ body {
 
 .secondary-color {
   color: var(--main-orange);
-  
 }
 
 .bold-text {
@@ -77,18 +76,8 @@ nav {
   width: 100%;
 }
 
-.nav-link {
-  background-color: var(--main-orange);
-  border-radius: .2rem;
-}
-
 .logo {
   width: 16.25rem;
-}
-
-nav a.nav-link {
-  font-weight: 500;
-  color: var(--main-orange)
 }
 
 .navbar-nav > li > a {
@@ -148,4 +137,8 @@ nav a.nav-link {
 
 .queue-link:hover {
   color: black;
+}
+
+.queue-link:focus {
+  background-color: white;
 }
