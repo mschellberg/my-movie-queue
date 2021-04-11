@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Queue from './pages/Queue'
 
 import React from 'react';
 
@@ -31,11 +32,13 @@ function App() {
     <Router>
         <>
           <Nav />
+          {/*TODO: secure routes so you can only access certain ones if logged in */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route render={() => <h1 className="title-text">Wrong page!</h1>} />
+            <Route exact path="/queue" component={Queue} />
+            <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />
           </Switch>
         </>
       </Router>

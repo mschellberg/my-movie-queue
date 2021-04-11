@@ -17,7 +17,7 @@ const Signup = () => {
                     <input type="password" id="inputPassword" className="form-control" placeholder="Password" required=""></input>
                     <button className="btn btn-lg btn-block orange-button add-top-margin" type="submit">Sign up</button>           
                 </form>
-                <p className="center">Already have an account with us?:<Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
+                <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
             </div>
         </div>
     </>

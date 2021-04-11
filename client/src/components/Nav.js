@@ -15,6 +15,10 @@ function Nav(props) {
                     <li className="nav-item">
                         <Link to="/" className="link-text bold-text add-padding main-link">Home</Link>
                     </li>
+                    {/* ****TODO: add conditional rendering to only show these if logged in */}
+                    <li>
+                        <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
+                    </li>
                     <li className="nav-item">
                         <Link to="/login" className="link-text bold-text add-padding main-link">Login</Link>
                     </li>
