@@ -37,6 +37,10 @@ body {
   font-weight: bold;
 }
 
+.black-text {
+  color: black;
+}
+
 .background-orange {
   background-color: var(--main-orange);
   border-radius: .25rem;
@@ -97,9 +101,9 @@ nav a.nav-link {
 }
 
 /*Home Styles*/
-
-.searchbar {
-  background-color: var(--light-gray);
+.searchbar:focus {
+  border-color: var(--main-orange);
+  box-shadow: var(--main-orange);
 }
 
 .main-container {
@@ -129,4 +133,19 @@ nav a.nav-link {
 .main-link:focus {
   border-top: .3rem solid var(--main-orange);
   color:var(--main-orange);
+}
+
+.queue-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.queue-link {
+  padding: .7rem;
+  margin: .4rem;
+}
+
+.queue-link:hover {
+  color: black;
 }

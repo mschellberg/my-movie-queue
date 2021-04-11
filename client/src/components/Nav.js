@@ -20,7 +20,7 @@ function Nav(props) {
                         <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login" className="link-text bold-text add-padding main-link">Login</Link>
+                        <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
                     </li>
                 </ul>
             </div>

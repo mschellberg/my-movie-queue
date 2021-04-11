@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Queue from './pages/Queue'
+import Favorites from './components/Favorites';
 
 import React from 'react';
 
@@ -38,6 +39,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/queue" component={Queue} />
+            <Route exact path="/favorites" component={Favorites} />
             <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />
           </Switch>
         </>

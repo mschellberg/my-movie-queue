@@ -8,7 +8,7 @@ const Signup = () => {
         <div className="main-container">
             <div className="results-container add-margin">
                 <form className="form-signin add-margin">
-                    <h1 className="mb-3">Create an Account</h1>
+                    <h1 className="mb-3 center">Create an Account</h1>
                     <label htmlFor="inputEmail" className="label-text">Email address</label>
                     <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus=""></input>
                     <label htmlFor="inputUsername" className="label-text">Username</label>
