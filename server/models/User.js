@@ -59,7 +59,7 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 // import schema
-// const movieSchema = require('./Movie');
+const movieSchema = require("./Movie");
 
 const userSchema = new Schema(
   {
