@@ -1,5 +1,3 @@
-const { User } = require;
-
 // import user model
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");

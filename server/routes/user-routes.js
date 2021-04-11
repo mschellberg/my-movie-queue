@@ -1,14 +1,14 @@
-const router = require("express").Router;
+const router = require("express").Router();
 const {
   createUser,
   getOneUser,
   savedMovie,
   deleteMovie,
   login,
-} = require("../../controllers/user-controller");
+} = require("../controllers/user-controller");
 
 // import middleware
-const { authMiddleware } = require("../../utils/auth");
+const { authMiddleware } = require("../utils/auth");
 
 // send a token for verification of user
 router.route("/").post(createUser).put(authMiddleware, savedMovie);
