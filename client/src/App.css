@@ -1,38 +1,144 @@
-.App {
+
+:root {
+  --main-gray: #2d2d2d;
+  --light-gray: #979696;
+  --main-orange: #ff8762;
+  --secondary-orange: #ffa276;
+}
+
+body {
+  background-color: black;
+}
+
+/* Utility Classes */
+
+.add-margin {
+  margin: 1.5rem;
+}
+
+.add-top-margin {
+  margin-top: 1.5rem;
+}
+
+.add-padding {
+  padding: .5rem;
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.secondary-color {
+  color: var(--main-orange);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bold-text {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.black-text {
+  color: black;
+}
+
+.background-orange {
+  background-color: var(--main-orange);
+  border-radius: .25rem;
+}
+
+.orange-button {
+  color: white;
+  font-weight: bold;
+  background-color: var(--main-orange);
+  border-color: var(--main-orange);
+  border-radius: .25rem;
+}
+
+.orange-button:hover {
+  color: black;
+  background-color: var(--secondary-orange);
+  border-color: var(--secondary-orange);
+  text-decoration: none;
+}
+
+.link-text {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.link-text:hover {
+  color: var(--main-orange);
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Navigation Styles */
+
+nav {
+  background: black;
+  width: 100%;
+}
+
+.logo {
+  width: 16.25rem;
+}
+
+.navbar-nav > li > a {
+  margin: 0rem 0.75rem;
+  border-top: 0.1875rem solid transparent;
+}
+
+.navbar-brand {
+  max-width: 17.25rem;
+}
+
+/*Home Styles*/
+.searchbar:focus {
+  border-color: var(--main-orange);
+  box-shadow: var(--main-orange);
+}
+
+.main-container {
+  background-image: url('./images/cinema.jpg');
+  height: 80vh;
+  padding: 2rem;
+  background-size: cover;
+}
+
+.results-container {
+  background-color: var(--light-gray);
+  border-radius: .25rem;
+  padding: .5rem;
+}
+
+.title-text {
+  color:white;
+  text-align: center;
+  text-shadow: .25rem .5rem .5rem black;
+}
+
+.main-link:hover {
+  border-top: .3rem solid var(--main-orange);
+  text-shadow: .2rem .2rem .5rem var(--light-gray);
+}
+
+.main-link:focus {
+  border-top: .3rem solid var(--main-orange);
+  color:var(--main-orange);
+}
+
+.queue-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.queue-link {
+  padding: .7rem;
+  margin: .4rem;
+}
+
+.queue-link:hover {
+  color: black;
+}
+
+.queue-link:focus {
+  background-color: white;
 }
