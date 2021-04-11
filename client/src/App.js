@@ -1,5 +1,12 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Queue from './pages/Queue'
+import Favorites from './pages/Favorites';
 
 import React from 'react';
 
@@ -23,22 +30,20 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <>
+          <Nav />
+          {/*TODO: secure routes so you can only access certain ones if logged in */}
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/queue" component={Queue} />
+            <Route exact path="/favorites" component={Favorites} />
+            <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />
+          </Switch>
+        </>
+      </Router>
     </ApolloProvider>
   );
 }
