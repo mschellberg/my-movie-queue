@@ -1,7 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-
+import MovieList from "./components/movieList";
 import React from 'react';
+
 
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -17,30 +16,15 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <MovieList/>
     </ApolloProvider>
   );
 }
-
+// always export our component function so we can use it in other files
 export default App;
