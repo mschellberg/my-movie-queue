@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import gql from 'graphql-tag';
 
 export const LOGIN_USER = gql`
@@ -54,6 +53,3 @@ export const REMOVE_MOVIE = gql`
     }
   }
 `;
-=======
-//need both the users and movies GraphQL and mutations figured out
->>>>>>> dev-jr
