@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -7,6 +6,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Queue from './pages/Queue'
 import Favorites from './pages/Favorites';
+import './app.css';
+
 
 import React from 'react';
 
