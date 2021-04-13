@@ -1,7 +1,7 @@
 import React from 'react';
-
+import Movie from './Movie';
 const Home = () => {
-  
+
     return (
       <>
       <div className="main-container">
@@ -12,11 +12,10 @@ const Home = () => {
             <button type="button" className="btn btn-outline orange-button">Search</button>
         </div>
         <div className="results-container add-margin">
-          <h2>This container will hold search results</h2>
+         <Movie />
         </div>
       </div>
       </>
     );
-  };
-  
+  }; 
   export default Home;
