@@ -12,13 +12,12 @@ class Movie extends Component {
         this.performSearch()
         }
         performSearch(){
-            console.log("perform search using moviedb")
             // Use Ajax to use async calls to fetch data from web 
+            // replace "search" with "discover" for random selection
             const urlApi = "https://api.themoviedb.org/3/discover/movie?api_key=8e3897289a2060fb320a0796b9783df4"
             $.ajax({
                 url: urlApi,
                 success: (searchResults) => {
-                    console.log("fetched data");
                     console.log(searchResults);
                     const results = searchResults.results
 
@@ -27,7 +26,6 @@ class Movie extends Component {
 
                     results.forEach((movie) => {
                         movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path
-                        console.log(movie.poster_path)
                         const movieRow = <MovieDisplay key={movie.id} movie={movie}/>
                         movieRows.push(movieRow)
                     })
@@ -43,9 +41,6 @@ class Movie extends Component {
     render() {
         return (
             <div className="Test">
-                
-                <input placeholder="search for movies"/>
-
                 {this.state.rows}
             </div>
         );
