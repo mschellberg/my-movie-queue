@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/my-movie-queue', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/project-3',
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 module.exports = mongoose.connection;

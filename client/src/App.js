@@ -10,6 +10,7 @@ import Favorites from './pages/Favorites';
 
 import React from 'react';
 
+
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -24,7 +25,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 function App() {
@@ -47,5 +48,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
+// always export our component function so we can use it in other files
 export default App;
