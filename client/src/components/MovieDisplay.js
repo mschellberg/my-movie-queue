@@ -4,13 +4,14 @@ class MovieDisplay extends React.Component {
     render() {
         return<table key={this.props.movie.id}>
         <tbody>
-            <tr>
+            <tr className="movie-container">
                 <td>
-                <img alt="poster" src={this.props.movie.poster_src}/>
+                <img className="image" alt="poster" src={this.props.movie.poster_src}/>
                 </td>
-                <td>
-                {this.props.movie.title}
-                <p>{this.props.movie.overview}</p>
+                <td className="title-description">
+                <p className="movieTitle">{this.props.movie.title}</p>
+                <p className="description">{this.props.movie.overview}</p>
+                <p className="trailer">Trailer to movie goes here</p>
                 </td>
                 </tr>
         </tbody>
