@@ -10,7 +10,7 @@ const routes = require("./routes");
 const { typeDefs, resolvers } = require("./schemas");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 console.log(process.env.NODE_ENV);
 
 const server = new ApolloServer({

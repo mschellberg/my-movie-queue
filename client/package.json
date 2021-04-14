@@ -11,12 +11,9 @@
     "bootstrap": "^4.6.0",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
-<<<<<<< .merge_file_a51460
     "dotenv": "^8.2.0",
-=======
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
->>>>>>> .merge_file_a50812
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
