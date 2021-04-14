@@ -1,25 +1,103 @@
-import React from 'react';
+// see SignupForm.js for comments
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
+import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
+// integrate Apollo hooks
+import { useMutation } from '@apollo/react-hooks';
+import { LOGIN_USER } from '../utils/mutations';
+
 const Login = () => {
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  const handleInputChange = (event) => {
+      const { name, value } = event.target;
+      setUserFormData({ 
+        ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+      event.preventDefault();
+
+      // check if form has everything (as per react-bootstrap docs)
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+      }
+
+      try {
+          // use LOGIN_USER mutation
+          const { data } = await login({
+              variables: userFormData
+          });
+
+          if (error) {
+            throw new Error('something went wrong!');
+          }
+
+          const token = data.login.token;
+          // console.log(user);
+          Auth.login(token);
+        } catch (err) {
+          console.error(err);
+          setShowAlert(true);
+        }
+
+      setUserFormData({
+          username: '',
+          email: '',
+          password: '',
+      });
+  };
+
   
     return (
       <>
-      <div className="main-container">
-        <div className="results-container add-margin">
-            <form className="form-signin add-margin">
-                <h1 className="mb-3 center">Log in</h1>
-                <label htmlFor="inputEmail" className="label-text">Email address</label>
-                <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus=""></input>
-                <label htmlFor="inputPassword" className="label-text">Password</label>
-                <input type="password" id="inputPassword" className="form-control" placeholder="Password" required=""></input>
-                <button className="btn btn-lg btn-block orange-button add-top-margin" type="submit">Log in</button>           
-            </form>
-            <p className="center">Don't have an account with us yet?<br/><Link to="/signup" className="add-padding link-text bold-text">Create an Account</Link></p>
-        </div>
-      </div>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong with your login credentials!
+        </Alert>
+        <Form.Group>
+          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Your email'
+            name='email'
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Your password'
+            name='password'
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+        </Form.Group>
+        <Button
+          disabled={!(userFormData.email && userFormData.password)}
+          type='submit'
+          variant='success'>
+          Submit
+        </Button>
+      </Form>
+
+      <p className="center">Don't have an account with us yet?<br/><Link to="/signup" className="add-padding link-text bold-text">Create an Account</Link></p>
     </>
-    );
-  };
+  );
+};
   
   export default Login;
