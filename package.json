@@ -17,5 +17,8 @@
 	"bugs": {
 		"url": "https://github.com/kesiahp18/my-movie-queue/issues"
 	},
-	"homepage": "https://github.com/kesiahp18/my-movie-queue#readme"
+	"homepage": "https://github.com/kesiahp18/my-movie-queue#readme",
+	"dependencies": {
+		"concurrently": "^6.0.2"
+	}
 }
