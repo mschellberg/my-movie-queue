@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -7,12 +6,18 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Queue from './pages/Queue'
 import Favorites from './pages/Favorites';
+import './app.css';
+
 
 import React from 'react';
+
 
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+
+console.log(process.env.REACT_APP_TMD_API_KEY)
+
 
 const client = new ApolloClient({
   request: operation => {
@@ -24,7 +29,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 });
 
 function App() {
@@ -47,5 +52,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
+// always export our component function so we can use it in other files
 export default App;
