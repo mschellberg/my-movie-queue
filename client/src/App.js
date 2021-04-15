@@ -16,6 +16,7 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
+//this key is showing up just fine
 console.log(process.env.REACT_APP_TMD_API_KEY)
 
 
