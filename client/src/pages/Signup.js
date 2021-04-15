@@ -38,12 +38,14 @@ const Signup = () => {
                 variables:  userFormData 
             });
 
+            
+
             if (error) {
                 throw new Error('something went wrong!');
               }
 
               const token = data.addUser.token;
-              // console.log(user);
+              alert(token);
               Auth.login(token);
             } catch (err) {
               console.error(err);
@@ -55,7 +57,9 @@ const Signup = () => {
             email: '',
             password: '',
         });
+
     };
+
   
     return (
         <>
