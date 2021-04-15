@@ -38,9 +38,9 @@ class Movie extends Component {
     }
 
     searchChangeHandler(e) {
-        const bound = this
+        const boundMovie = this
         const searchMovie = e.target.value
-        this.performSearch(searchMovie)
+        boundMovie.performSearch(searchMovie)
     }
 
     render() {
