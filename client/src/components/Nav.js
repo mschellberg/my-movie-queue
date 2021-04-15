@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
+import Auth from '../utils/auth';
+
 
 function Nav(props) {
     return (
@@ -15,13 +17,15 @@ function Nav(props) {
                     <li>
                         <Link to="/" className="link-text bold-text add-padding main-link">Home</Link>
                     </li>
-                    {/* ****TODO: add conditional rendering to only show these if logged in */}
-                    <li>
-                        <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
-                    </li>
-                    <li>
-                        <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
-                    </li>
+         {/*This is where the COnditional was added for the Nav*/}
+                    {Auth.loggedIn() ? (
+                <>
+                  <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
+                  <Link onClick={Auth.logout}className="link-text bold-text add-padding main-link">Logout</Link>
+                </>
+              ) : (
+                <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
+              )}
                 </ul>
             </div>
             
