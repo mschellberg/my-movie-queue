@@ -1,30 +1,118 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
+import { useMutation } from '@apollo/react-hooks';
+
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
+
+    // set initial form state
+    const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+    // set state for form validation
+    const [validated] = useState(false);
+    // set state for alert
+    const [showAlert, setShowAlert] = useState(false);
+    // uses mutation
+    const [addUser, { error }] = useMutation(ADD_USER);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name]: value });
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        // check if form has everything (as per react-bootstrap docs)
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        try {
+            // use ADD_USER mutation
+            const { data } = await addUser({
+                variables:  userFormData 
+            });
+
+            if (error) {
+                throw new Error('something went wrong!');
+              }
+
+              const token = data.addUser.token;
+              // console.log(user);
+              Auth.login(token);
+            } catch (err) {
+              console.error(err);
+              setShowAlert(true);
+            }
+
+        setUserFormData({
+            username: '',
+            email: '',
+            password: '',
+        });
+    };
   
     return (
         <>
-        <div className="main-container">
-            <div className="results-container add-margin">
-                <form className="form-signin add-margin">
-                    <h1 className="mb-3 center">Create an Account</h1>
-                    <label htmlFor="inputEmail" className="label-text">Email address</label>
-                    <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus=""></input>
-                    <label htmlFor="inputUsername" className="label-text">Username</label>
-                    <input type="username" id="inputUsername" className="form-control" placeholder="Username" required="" autoFocus=""></input>
-                    <label htmlFor="inputPassword" className="label-text">Password</label>
-                    <input type="password" id="inputPassword" className="form-control" placeholder="Password" required=""></input>
-                    <button className="btn btn-lg btn-block orange-button add-top-margin" type="submit">Sign up</button>           
-                </form>
-                <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
-            </div>
-        </div>
+        {/* This is needed for the validation functionality above */}
+        <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            {/* show alert if server response is bad */}
+            <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+                Something went wrong with your signup!
+            </Alert>
+
+            <Form.Group>
+                <Form.Label htmlFor='username'>Username</Form.Label>
+                <Form.Control
+                    type='text'
+                    placeholder='Your username'
+                    name='username'
+                    onChange={handleInputChange}
+                    value={userFormData.username}
+                    required
+                />
+                <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label htmlFor='email'>Email</Form.Label>
+                <Form.Control
+                    type='email'
+                    placeholder='Your email address'
+                    name='email'
+                    onChange={handleInputChange}
+                    value={userFormData.email}
+                    required
+                />
+                <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label htmlFor='password'>Password</Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder='Your password'
+                    name='password'
+                    onChange={handleInputChange}
+                    value={userFormData.password}
+                    required
+                />
+                <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+            </Form.Group>
+            <Button
+            disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+            type='submit'
+            variant='success'>
+                Submit
+            </Button>
+            <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
+        </Form>
     </>
-    );
+);
 };
-  
 export default Signup;
-
-
-

@@ -12,12 +12,12 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v -password"
-        );
+          '-__v -password')
+       
         return userData;
       }
       throw new AuthenticationError("Not logged in");
-    },
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -59,7 +59,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedMovie: { movie_id: args.bookId } } },
+          { $pull: { savedMovie: { movie_id: args.movieId } } },
           { new: true }
         );
         return updatedUser;
