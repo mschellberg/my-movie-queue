@@ -38,6 +38,8 @@ const Signup = () => {
                 variables:  userFormData 
             });
 
+            
+
             if (error) {
                 throw new Error('something went wrong!');
               }
@@ -55,7 +57,9 @@ const Signup = () => {
             email: '',
             password: '',
         });
+
     };
+
   
     return (
         <>
