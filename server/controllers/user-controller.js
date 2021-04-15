@@ -64,6 +64,7 @@ module.exports = {
     }
   },
   // remove a movie
+  //movie id below
   async deleteMovie({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
