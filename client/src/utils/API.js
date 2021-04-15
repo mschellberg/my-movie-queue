@@ -28,6 +28,7 @@ export const loginUser = (userData) => {
   });
 };
 
+// need to update for movies
 // save book data for a logged in user
 export const saveBook = (bookData, token) => {
   return fetch('/api/users', {
@@ -40,6 +41,7 @@ export const saveBook = (bookData, token) => {
   });
 };
 
+// need to ypdate for movies
 // remove saved book data for a logged in user
 export const deleteBook = (bookId, token) => {
   return fetch(`/api/users/books/${bookId}`, {

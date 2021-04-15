@@ -1,4 +1,4 @@
-// see SignupForm.js for comments
+// see Signup.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
@@ -41,7 +41,7 @@ const Login = () => {
           }
 
           const token = data.login.token;
-          // console.log(user);
+          alert(token);
           Auth.login(token);
         } catch (err) {
           console.error(err);

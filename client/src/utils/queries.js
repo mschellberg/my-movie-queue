@@ -5,13 +5,19 @@
 
 import gql from 'graphql-tag';
 
-export const GET_MOVIES = gql`
-  query GetMovies {
-    movies {
-      movie_id
-      title
-      overview
+
+export const GET_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      bookCount
+      savedMovies {
+        movie_id
+        title
+        overview
+      }
     }
-  }    
+  }
 `;
-export default GET_MOVIES;

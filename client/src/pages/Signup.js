@@ -43,7 +43,7 @@ const Signup = () => {
               }
 
               const token = data.addUser.token;
-              // console.log(user);
+              alert(token);
               Auth.login(token);
             } catch (err) {
               console.error(err);
