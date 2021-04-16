@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Auth from '../utils/auth';
+import { Button } from 'react-bootstrap';
 
 class MovieDisplay extends Component {
     watchTrailer() {
@@ -18,8 +20,16 @@ class MovieDisplay extends Component {
                 <td className="title-description">
                 <h3>{this.props.movie.title}</h3>
                 <p className="description">{this.props.movie.overview}</p>
-                <input type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
                 </td>
+                {Auth.loggedIn() ? (
+                <>
+                  <Button className='btn-block btn-info'> Save to Watchlist</Button>
+                  <Button className='btn-block btn-info'> Save to Favorites</Button>
+                  <input type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
+                </>
+              ) : (
+                <input type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
+              )}
                 </tr>
         </tbody>
     </table>
@@ -27,3 +37,4 @@ class MovieDisplay extends Component {
 }
 
 export default MovieDisplay
+

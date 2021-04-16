@@ -45,7 +45,7 @@ const Signup = () => {
               }
 
               const token = data.addUser.token;
-              alert(token);
+             // alert(token);
               Auth.login(token);
             } catch (err) {
               console.error(err);
