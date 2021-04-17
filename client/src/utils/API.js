@@ -29,22 +29,22 @@ export const loginUser = (userData) => {
 };
 
 // need to update for movies
-// save book data for a logged in user
-export const saveBook = (bookData, token) => {
+// save data for a logged in user
+export const saveMovie = (movieData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(movieData),
   });
 };
 
 // need to ypdate for movies
-// remove saved book data for a logged in user
-export const deleteBook = (bookId, token) => {
-  return fetch(`/api/users/books/${bookId}`, {
+// remove saved data for a logged in user
+export const deleteMovie = (movieId, token) => {
+  return fetch(`/api/users/movies/${movieId}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ export const deleteBook = (bookId, token) => {
 const baseUrl = 'https://api.themoviedb.org/3/';
             const api_key = 'process.env.REACT_APP_TMD_API_KEY';
         // tested and worked  // const movie = "Avengers";
-// make a search to google books api
+
 
 export const searchMovies = (query) => {
   return fetch(`${baseUrl}search/movie?api_key=${api_key}&query=${query}`);
