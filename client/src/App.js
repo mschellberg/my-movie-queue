@@ -18,7 +18,7 @@ import ApolloClient from 'apollo-boost';
 require('dotenv').config()
 
 //this key is showing up just fine
-console.log(process.env.REACT_APP_TMD_API_KEY)
+//console.log(process.env.REACT_APP_TMD_API_KEY)
 
 
 const client = new ApolloClient({

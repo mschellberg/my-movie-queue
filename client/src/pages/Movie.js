@@ -20,9 +20,8 @@ class Movie extends Component {
             // replace "search" with "discover" for random selection
             const api_key = process.env.REACT_APP_TMD_API_KEY;
             const baseUrl = 'https://api.themoviedb.org/3/';
-
+            
             const urlApi = `${baseUrl}search/movie?api_key=${api_key}&query=${searchMovie}` ;
-            console.log(urlApi)
             $.ajax({
                 url: urlApi,
                 success: (searchResults) => {
