@@ -8,13 +8,14 @@ import Queue from './pages/Queue'
 import Favorites from './pages/Favorites';
 import './app.css';
 
-
 import React from 'react';
 
 
 // add these two library import statements
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+
+require('dotenv').config()
 
 //this key is showing up just fine
 console.log(process.env.REACT_APP_TMD_API_KEY)
