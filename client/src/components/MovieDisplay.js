@@ -16,7 +16,7 @@ class MovieDisplay extends Component {
     }
 
     favoritesAlert=()=>{
-      alert('Add to My Favorites List is a Coming Attraction');
+      alert('Add to My Favorites List is a Coming Attraction!');
     }
 
     render() {
