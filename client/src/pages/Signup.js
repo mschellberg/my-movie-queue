@@ -64,6 +64,7 @@ const Signup = () => {
     return (
         <>
         {/* This is needed for the validation functionality above */}
+        <div className="results-container add-margin">
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
             {/* show alert if server response is bad */}
             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
@@ -71,7 +72,7 @@ const Signup = () => {
             </Alert>
 
             <Form.Group>
-                <Form.Label htmlFor='username'>Username</Form.Label>
+                <Form.Label htmlFor='username' className="bold-text">Username</Form.Label>
                 <Form.Control
                     type='text'
                     placeholder='Your username'
@@ -84,7 +85,7 @@ const Signup = () => {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label htmlFor='email'>Email</Form.Label>
+                <Form.Label htmlFor='email' className="bold-text">Email</Form.Label>
                 <Form.Control
                     type='email'
                     placeholder='Your email address'
@@ -97,7 +98,7 @@ const Signup = () => {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label htmlFor='password'>Password</Form.Label>
+                <Form.Label htmlFor='password' className="bold-text">Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Your password'
@@ -111,11 +112,13 @@ const Signup = () => {
             <Button
             disabled={!(userFormData.username && userFormData.email && userFormData.password)}
             type='submit'
+            className="orange-button"
             variant='success'>
                 Submit
             </Button>
             <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
         </Form>
+        </div>
     </>
 );
 };

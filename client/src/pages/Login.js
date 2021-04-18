@@ -58,12 +58,13 @@ const Login = () => {
   
     return (
       <>
+      <div className="results-container add-margin">
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='email' className="bold-text">Email</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -76,7 +77,7 @@ const Login = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='password' className="bold-text">Password</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -90,12 +91,14 @@ const Login = () => {
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
+          className="orange-button"
           variant='success'>
           Submit
         </Button>
       </Form>
 
       <p className="center">Don't have an account with us yet?<br/><Link to="/signup" className="add-padding link-text bold-text">Create an Account</Link></p>
+      </div>
     </>
   );
 };

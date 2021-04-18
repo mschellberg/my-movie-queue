@@ -2,6 +2,9 @@ import React from "react";
 import QueueNav from '../components/QueueNav'
 
 function Favorites() {
+
+ 
+        
     return (
         <>
         <div className="main-container">
@@ -10,7 +13,7 @@ function Favorites() {
             </div>
             <QueueNav />
             <div className="results-container add-top-margin">
-                <h2 className="center">Favorites list will be here</h2>
+                <h3 className="center">Favorites list will be here</h3>
             </div>
         </div>
         </>

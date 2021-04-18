@@ -1,6 +1,7 @@
 # My Movie Queue
 ## Description
-An application that allows users to search movies and save the ones they want to watch.
+An application that allows users to search movies and find information about them.
+Coming Soon: Login and save your favorite movies and ones you want to watch!
 
 ## Table of Contents
 * [Installation](https://github.com/kesiahp18/my-movie-queue#installation)
@@ -11,15 +12,13 @@ An application that allows users to search movies and save the ones they want to
 ![Screenshot](./screenshots/screenshot0.png)
 ![Screenshot](./screenshots/screenshot1.png)
 
-## Installation
-This is a web application that can be visited [here](https://my-movie-queue.herokuapp.com)
-
 ## Usage
-This is a web application that can be visited [here](https://my-movie-queue.herokuapp.com)
+This is a web application that can be visited [here](https://glacial-headland-73425.herokuapp.com/)
 
 ## Technologies
 * React
 * Node.js
+* Bootstrap
 * Graphql
 * Apollo
 * Mongo

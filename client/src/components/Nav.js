@@ -20,11 +20,17 @@ function Nav(props) {
          {/*This is where the COnditional was added for the Nav*/}
                     {Auth.loggedIn() ? (
                 <>
-                  <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
-                  <Link onClick={Auth.logout}className="link-text bold-text add-padding main-link">Logout</Link>
+                    <li>
+                        <Link to="/queue" className="link-text bold-text add-padding main-link">My Queue</Link>
+                    </li>
+                    <li>
+                        <Link onClick={Auth.logout}className="link-text bold-text add-padding main-link">Logout</Link>
+                    </li>
                 </>
               ) : (
-                <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
+                    <li>
+                        <Link to="/login" className="link-text bold-text add-padding main-link">Log in</Link>
+                    </li>
               )}
                 </ul>
             </div>
