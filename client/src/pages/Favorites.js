@@ -2,6 +2,9 @@ import React from "react";
 import QueueNav from '../components/QueueNav'
 
 function Favorites() {
+
+ 
+        
     return (
         <>
         <div className="main-container">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Auth from '../utils/auth';
+
 //import { Button } from 'react-bootstrap';
 
 class MovieDisplay extends Component {
@@ -10,10 +11,18 @@ class MovieDisplay extends Component {
         console.log(window.location.href)
     }
 
+    watchlistAlert=()=>{
+      alert('Add to Watchlist is a Coming Attraction!');
+    }
+
+    favoritesAlert=()=>{
+      alert('Add to My Favorites List is a Coming Attraction!');
+    }
+
     render() {
         return<table key={this.props.movie.id}>
         <tbody>
-            <tr className="movie-container">
+            <tr className="movie-container text-center">
                 <td>
                 <img className="image" alt="poster" src={this.props.movie.poster_src}/>
                 </td>
@@ -23,14 +32,14 @@ class MovieDisplay extends Component {
                 </td>
                 {Auth.loggedIn() ? (
                     <div className="dropdown">
-                    <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Save to List
+                    <button className="btn text-light queue-button dropdown-toggle" type="button" data-toggle="dropdown">Save to List
                     <span className="caret"></span></button>
-                    <ul className="dropdown-menu">
-                      <li><a href="#">Save to Watchlist</a></li>
-                      <li><a href="#">Save to Favorites</a></li>
+                    <ul className="dropdown-menu queue-button">
+                    <li  className="queue-button text-light" onClick={this.watchlistAlert}>Add to Watchlist!</li>
+                    <li  className="queue-button text-light" onClick={this.favoritesAlert}>Add to My Favorites!</li>
                      {/*} <li><a href="#">Save to My Movie Shelf</a></li>{*/}
                     </ul>
-                    <input className="btn btn-primary" type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
+                    <input className="btn queue-button text-light" type="playTrailer" onClick={this.watchTrailer.bind(this)} value="More Info"/>
                   </div>
                /*} <>
                   <Button className='btn-block btn-info'> Save to Watchlist</Button>
@@ -38,7 +47,7 @@ class MovieDisplay extends Component {
                   <input type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
                 </>{*/
               ) : (
-                <input className="btn btn-primary" type="playTrailer" onClick={this.watchTrailer.bind(this)} value="Play trailer"/>
+                <input className="btn queue-button text-light" type="playTrailer" onClick={this.watchTrailer.bind(this)} value="More Info"/>
               )}
                 </tr>
         </tbody>

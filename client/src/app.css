@@ -171,3 +171,7 @@ nav {
   padding: 1.5rem;
   flex-direction: column;
 }
+
+.queue-button {
+  background-color: #ff8762;
+}
