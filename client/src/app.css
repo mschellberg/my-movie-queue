@@ -175,3 +175,12 @@ nav {
 .queue-button {
   background-color: #ff8762;
 }
+
+.orange-button:disabled {
+  background-color: #aa5a42;
+  border-color: #aa5a42;
+}
+
+.orange-button:disabled:hover {
+  color: white;
+}
