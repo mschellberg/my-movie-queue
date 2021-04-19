@@ -27,11 +27,11 @@ const client = new ApolloClient({
 
     operation.setContext({
       headers: {
-        authorization: token ? `Bearer ${token}` : ''
+        authorization: token ? `Bearer ${token}` : '' 
       }
     })
   },
-  uri: 'http://localhost:3001/graphql'
+  uri: "/graphql"
 });
 
 function App() {
@@ -40,7 +40,6 @@ function App() {
     <Router>
         <>
           <Nav />
-          {/*TODO: secure routes so you can only access certain ones if logged in */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
