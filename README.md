@@ -9,6 +9,8 @@ Coming Soon: Login and save your favorite movies and ones you want to watch!
 * [Technologies](https://github.com/kesiahp18/my-movie-queue#technologies)
 * [Contributors](https://github.com/kesiahp18/my-movie-queue#contributors)
 
+[Video of login working prior to deploying it on heroku](https://drive.google.com/file/d/1W5UAIQE02yF--iBfKhQCdZudsRcnNRo2/view)
+
 ![Screenshot](./screenshots/screenshot0.png)
 ![Screenshot](./screenshots/screenshot1.png)
 
